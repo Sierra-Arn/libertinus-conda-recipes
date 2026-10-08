@@ -91,13 +91,13 @@ Add the font format you need. Pixi will fetch the recipe from this repository, b
 
 ```bash
 # OpenType
-pixi add --git https://github.com/Sierra-Arn/libertinus-conda-recipes --rev 8d991b9ab0a304cd77a7998f2ce814d62518fce1 --subdir otf libertinus-otf
+pixi add --git https://github.com/Sierra-Arn/libertinus-conda-recipes --rev 8d991b9ab0a304cd77a7998f2ce814d62518fce1 --subdirectory otf libertinus-otf
 
 # TrueType
-pixi add --git https://github.com/Sierra-Arn/libertinus-conda-recipes --rev 8d991b9ab0a304cd77a7998f2ce814d62518fce1 --subdir ttf libertinus-ttf
+pixi add --git https://github.com/Sierra-Arn/libertinus-conda-recipes --rev 8d991b9ab0a304cd77a7998f2ce814d62518fce1 --subdirectory ttf libertinus-ttf
 
 # WOFF2
-pixi add --git https://github.com/Sierra-Arn/libertinus-conda-recipes --rev 8d991b9ab0a304cd77a7998f2ce814d62518fce1 --subdir woff2 libertinus-woff2
+pixi add --git https://github.com/Sierra-Arn/libertinus-conda-recipes --rev 8d991b9ab0a304cd77a7998f2ce814d62518fce1 --subdirectory woff2 libertinus-woff2
 ```
 
 The fonts are installed into `$CONDA_PREFIX/share/fonts/<format>/` of the environment.
