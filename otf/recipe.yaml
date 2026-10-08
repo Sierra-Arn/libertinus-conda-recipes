@@ -1,0 +1,62 @@
+# ==================================================================================================
+
+# Copyright (c) 2026 Ilya Snegov
+
+# Permission to use, copy, modify, and/or distribute this software for
+# any purpose with or without fee is hereby granted.
+
+# THE SOFTWARE IS PROVIDED “AS IS” AND THE AUTHOR DISCLAIMS ALL
+# WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES
+# OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE
+# FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY
+# DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN
+# AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT
+# OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+# ==================================================================================================
+# otf/recipe.yaml
+# ==================================================================================================
+
+context:
+    name: libertinus-otf
+    version: "7.051"
+
+# ==================================================================================================
+
+package:
+    name: ${{ name }}
+    version: ${{ version }}
+
+# ==================================================================================================
+
+source:
+    url: https://github.com/alerque/libertinus/releases/download/v${{ version }}/Libertinus-${{ version }}.tar.zst
+    sha256: 250677c929d3775a30913643594379af264ac2ef2801035aa1dcbe30b9be23a6
+
+# ==================================================================================================
+
+build:
+    number: 0
+    noarch: generic
+    script:
+        - set -euxo pipefail
+        - mkdir -p "${PREFIX}/share/fonts"
+        - cp -v static/OTF/*.otf "${PREFIX}/share/fonts/"
+
+# ==================================================================================================
+
+about:
+    homepage: https://github.com/alerque/libertinus
+    summary: The Libertinus font family (static OpenType fonts)
+    license: OFL-1.1
+    license_file:
+        - OFL.txt
+        - AUTHORS.txt
+        - CONTRIBUTORS.txt
+    description: |
+        Static OpenType (OTF) fonts of the Libertinus family:
+        Serif (Regular, Italic, Semibold, Semibold Italic, Bold, Bold Italic),
+        Serif Display, Serif Initials, Sans (Regular, Italic, Bold),
+        Mono, Math and Keyboard.
+
+# ==================================================================================================
